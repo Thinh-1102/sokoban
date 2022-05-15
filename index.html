@@ -105,6 +105,13 @@
         <div class="author">
             <h3 class="author-name"></h3>
             <h2 class="author-lever"></h2>
+            <div class="audio-volume">
+                <div class="audio-volume-icon">
+                    <i class="audio-volume-off off fa-solid fa-volume-off"></i>
+                    <i class="audio-volume-hight fa-solid fa-volume-high"></i>
+                </div>
+                <input id="progress" class="progress" type="range" value="100" step="1" min="0" max="100">
+            </div>
         </div>
         <div id="main">
         </div>
@@ -203,13 +210,7 @@
     <audio class="audio" controls>
         <source src="./accsest/mp3/1.mp3" type="audio/mp3">
     </audio>
-    <div class="audio-volume">
-        <div class="audio-volume-icon">
-            <i class="audio-volume-off off fa-solid fa-volume-off"></i>
-            <i class="audio-volume-hight fa-solid fa-volume-high"></i>
-        </div>
-        <input id="progress" class="progress" type="range" value="100" step="1" min="0" max="100">
-    </div>
+    
     <script src="./accsest/js/lever.js"></script>
     <script src="./accsest/js/validator.js"></script>
     <script src="./accsest/js/main.js"></script>
