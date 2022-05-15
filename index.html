@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đẩy thùng</title>
+    <link rel="stylesheet" href="./accsest/css/style.css">
+    <link rel="stylesheet" href="./accsest/css/form.css">
+    <link rel="stylesheet" href="./accsest/css/hdsd.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="modal">
+            <form action="" method="POST" class="form" id="form-1">
+                <h3 class="heading">Nếu bạn chưa có tài khoản</h3>
+                <p class="desc">Hãy đăng ký ngay một tài khoản để cùng giải cứu thế giới nào</p>
+    
+                <div class="spacer"></div>
+    
+                <div class="form-group">
+                    <label for="fullname" class="form-label">Tên đăng nhập</label>
+                    <input id="fullname" name="fullname" type="text" placeholder="Nhập username vào đây"
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" name="email" type="text" placeholder="Nhập email vào đây" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+                    <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu"
+                        type="password" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="gender" class="form-label">Giới tính</label>
+                    <div class="gender-group">
+                        <div class="gender">
+                            <input type="radio" class="gender-select" name="gender" value="male">nam
+                        </div>
+                        <div class="gender">
+                            <input type="radio" class="gender-select" name="gender" value="female">nữ
+                        </div>
+                        <div class="gender">
+                            <input type="radio" class="gender-select" name="gender" value="orther">khác
+                        </div>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+    
+                <button class="form-submit form-submit-css">Đăng ký</button>
+                <button class="form-submit-css" onclick="active()">Đăng nhập</button>
+                <button class="form-submit-css form-submit-author" onclick="author()">chơi với tư cách là khách vãng
+                    lai</button>
+            </form>
+            <form action="" method="POST" class="form-1 off" id="form-2">
+                <h3 class="heading">Chào mừng bạn quay lại</h3>
+    
+                <div class="spacer"></div>
+                <div class="social-login facebook" onclick="toastError()">
+                    <h3>đăng nhập bằng tài khoản facebook</h3>
+                </div>
+                <div class="social-login google" onclick="toastError()">
+                    <h3>đăng nhập bằng tài khoản google</h3>
+                </div>
+    
+                <div class="form-group">
+                    <label for="fullname" class="form-label">Tên đăng nhập</label>
+                    <input id="fullname" name="fullname" type="text" placeholder="Nhập username vào đây"
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+    
+                <button class="form-submit form-submit-css">Đăng Nhập</button>
+                <button class="form-submit-css" onclick="onForm()">Đăng ký</button>
+                <button class="form-submit-css form-submit-author" onclick="author()">chơi với tư cách là khách vãng
+                    lai</button>
+            </form>
+        </div>
+        <div class="author">
+            <h3 class="author-name"></h3>
+            <h2 class="author-lever"></h2>
+        </div>
+        <div id="main">
+        </div>
+        <div class="toast">
+            <div class="toast-img">
+                <img src="./accsest/img/icon.png" alt="">
+            </div>
+            <div class="toast-msg">
+                <h2 class="toast-heading">
+                    Chiến thắng!
+                </h2>
+                <p class="toast-content">
+                    Nào hãy tiếp tục với các kỉ lục mới nào
+                </p>
+            </div>
+        </div>
+        <div class="hdsd">
+            <div class="hdsd-title">
+                <h3>HƯỚNG DẪN SỬ DỤNG</h3>
+            </div>
+            <div class="hdsd-content">
+                <p>Chúng ta sẽ nhập vai vào một nhân vật chiến sĩ, nhiệm vụ chúng ta là sẽ cào các phím ← ↑ → ↓ để chiến sĩ
+                    sẽ di chuyển.
+                    Hãy đẩy các thùng vàng và kim cương về kho, nếu tất cả thùng hàng di chuyển tới đích rồi thì sẽ được đi
+                    chơi ở map lever mới nhé.
+                    Nào hãy nhảy vào và triển thôi💖
+                </p>
+            </div>
+        </div>
+        <div class="group-select">
+            <div class="selectLever">
+                <h1>Chọn level phù hợp với bạn</h1>
+                <div class="select">
+                    <select name="slct" id="slct">
+                        <option value="1">Lever 1</option>
+                        <option value="2">Lever 2</option>
+                        <option value="3">Lever 3</option>
+                        <option value="4">Lever 4</option>
+                        <option value="5">Lever 5</option>
+                        <option value="6">Lever 6</option>
+                        <option value="7">Lever 7</option>
+                        <option value="8">Lever 8</option>
+                        <option value="9">Lever 9</option>
+                        <option value="10">Lever 10</option>
+                        <option value="11">Lever 11</option>
+                        <option value="12">Lever 12</option>
+                        <option value="13">Lever 13</option>
+                        <option value="14">Lever 14</option>
+                        <option value="15">Lever 15</option>
+                        <option value="16">Lever 16</option>
+                        <option value="17">Lever 17</option>
+                        <option value="18">Lever 18</option>
+                        <option value="19">Lever 19</option>
+                        <option value="20">Lever 20</option>
+                        <option value="21">Lever 21</option>
+                        <option value="22">Lever 22</option>
+                        <option value="23">Lever 23</option>
+                        <option value="24">Lever 24</option>
+                        <option value="25">Lever 25</option>
+                        <option value="26">Lever 26</option>
+                        <option value="27">Lever 27</option>
+                        <option value="28">Lever 28</option>
+                        <option value="29">Lever 29</option>
+                        <option value="30">Lever 30</option>
+                        <option value="31">Lever 31</option>
+                        <option value="32">Lever 32</option>
+                        <option value="33">Lever 33</option>
+                        <option value="34">Lever 34</option>
+                        <option value="35">Lever 35</option>
+                        <option value="36">Lever 36</option>
+                        <option value="37">Lever 37</option>
+                        <option value="38">Lever 38</option>
+                        <option value="39">Lever 39</option>
+                        <option value="40">Lever 40</option>
+                        <option value="41">Lever 41</option>
+                        <option value="42">Lever 42</option>
+                        <option value="43">Lever 43</option>
+                        <option value="44">Lever 44</option>
+                        <option value="45">Lever 45</option>
+                        <option value="46">Lever 46</option>
+                        <option value="47">Lever 47</option>
+                        <option value="48">Lever 48</option>
+                        <option value="49">Lever 49</option>
+                        <option value="50">Lever 50</option>
+                    </select>
+                </div>
+            </div>
+            <div class="resetbtns">
+                <button class="btns confirm-btn">Xác nhận</button>
+                <button class="btns reset-btn">Chơi lại</button>
+            </div>
+        </div>
+    </div>
+    <audio class="audio" controls>
+        <source src="./accsest/mp3/1.mp3" type="audio/mp3">
+    </audio>
+    <script src="./accsest/js/lever.js"></script>
+    <script src="./accsest/js/validator.js"></script>
+    <script src="./accsest/js/main.js"></script>
+    <script>
+        const audio = document.querySelector('.audio')
+        var authorName;
+        Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname', 'vui lòng nhập tên đầy đủ của bạn'),
+                Validator.isRequired('#email', 'vui lòng nhập trường này'),
+                Validator.isEmail('#email', 'vui lòng nhập email'),
+                Validator.minLength('#password', 6, 'vui lòng nhập trên 6 kí tự'),
+                Validator.isRequired('#password_confirmation', 'vui lòng nhập trường này'),
+                Validator.isConfirmed('#password_confirmation', function () {
+                    return document.querySelector('#form-1 #password').value;
+                }, 'mật khẩu nhập lại không chính xác'),
+                Validator.isRequired('input[name="gender"]', 'vui lòng nhập trường này'),
+            ],
+            onSubmit: function (data) {
+                document.querySelector('.author-name').innerHTML = data.fullname;
+                document.querySelector('.modal').classList.add('off')
+                audio.play()
+            }
+        }
+        )
+        Validator({
+            form: '#form-2',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname', 'vui lòng nhập tên đầy đủ của bạn'),
+                Validator.minLength('#password', 6, 'vui lòng nhập trên 6 kí tự'),
+            ],
+            onSubmit: function (data) {
+                document.querySelector('.author-name').innerHTML = data.fullname;
+                document.querySelector('.modal').classList.add('off')
+                audio.play()
+            }
+        }
+        )
+
+        function active() {
+            document.querySelector('.form-1').classList.remove('off');
+            document.querySelector('.form').classList.add('off');
+        }
+
+        function author() {
+            document.querySelector('.modal').classList.add('off');
+            document.querySelector('.author-name').innerHTML =
+                `người chơi ${Math.floor((Math.random() * 100000) + 1)}`
+            audio.play()
+        }
+
+        function onForm() {
+            document.querySelector('.form-1').classList.add('off');
+            document.querySelector('.form').classList.remove('off');
+        }
+
+        // log in by facebook and google
+        function toastError() {
+            document.querySelector('.toast-heading').innerHTML = 'Đã xảy ra lỗi'
+            document.querySelector('.toast-content').innerHTML = 'Chức năng đang được nâng cấp'
+            document.querySelector('.toast').classList.add('fadein');
+            setTimeout(function () {
+                document.querySelector('.toast').classList.remove('fadein')
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>
