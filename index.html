@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game đẩy thùng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./accsest/css/style.css">
     <link rel="stylesheet" href="./accsest/css/form.css">
     <link rel="stylesheet" href="./accsest/css/hdsd.css">
@@ -17,35 +20,36 @@
             <form action="" method="POST" class="form" id="form-1">
                 <h3 class="heading">Nếu bạn chưa có tài khoản</h3>
                 <p class="desc">Hãy đăng ký ngay một tài khoản để cùng giải cứu thế giới nào</p>
-    
+
                 <div class="spacer"></div>
-    
+
                 <div class="form-group">
                     <label for="fullname" class="form-label">Tên đăng nhập</label>
                     <input id="fullname" name="fullname" type="text" placeholder="Nhập username vào đây"
                         class="form-control">
                     <span class="form-message"></span>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="email" class="form-label">Email</label>
                     <input id="email" name="email" type="text" placeholder="Nhập email vào đây" class="form-control">
                     <span class="form-message"></span>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="password" class="form-label">Mật khẩu</label>
-                    <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                    <input id="password" name="password" type="password" placeholder="Nhập mật khẩu"
+                        class="form-control">
                     <span class="form-message"></span>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
                     <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu"
                         type="password" class="form-control">
                     <span class="form-message"></span>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="gender" class="form-label">Giới tính</label>
                     <div class="gender-group">
@@ -61,7 +65,7 @@
                     </div>
                     <span class="form-message"></span>
                 </div>
-    
+
                 <button class="form-submit form-submit-css">Đăng ký</button>
                 <button class="form-submit-css" onclick="active()">Đăng nhập</button>
                 <button class="form-submit-css form-submit-author" onclick="author()">chơi với tư cách là khách vãng
@@ -69,7 +73,7 @@
             </form>
             <form action="" method="POST" class="form-1 off" id="form-2">
                 <h3 class="heading">Chào mừng bạn quay lại</h3>
-    
+
                 <div class="spacer"></div>
                 <div class="social-login facebook" onclick="toastError()">
                     <h3>đăng nhập bằng tài khoản facebook</h3>
@@ -77,20 +81,21 @@
                 <div class="social-login google" onclick="toastError()">
                     <h3>đăng nhập bằng tài khoản google</h3>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="fullname" class="form-label">Tên đăng nhập</label>
                     <input id="fullname" name="fullname" type="text" placeholder="Nhập username vào đây"
                         class="form-control">
                     <span class="form-message"></span>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="password" class="form-label">Mật khẩu</label>
-                    <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                    <input id="password" name="password" type="password" placeholder="Nhập mật khẩu"
+                        class="form-control">
                     <span class="form-message"></span>
                 </div>
-    
+
                 <button class="form-submit form-submit-css">Đăng Nhập</button>
                 <button class="form-submit-css" onclick="onForm()">Đăng ký</button>
                 <button class="form-submit-css form-submit-author" onclick="author()">chơi với tư cách là khách vãng
@@ -121,9 +126,11 @@
                 <h3>HƯỚNG DẪN SỬ DỤNG</h3>
             </div>
             <div class="hdsd-content">
-                <p>Chúng ta sẽ nhập vai vào một nhân vật chiến sĩ, nhiệm vụ chúng ta là sẽ cào các phím ← ↑ → ↓ để chiến sĩ
+                <p>Chúng ta sẽ nhập vai vào một nhân vật chiến sĩ, nhiệm vụ chúng ta là sẽ cào các phím ← ↑ → ↓ để chiến
+                    sĩ
                     sẽ di chuyển.
-                    Hãy đẩy các thùng vàng và kim cương về kho, nếu tất cả thùng hàng di chuyển tới đích rồi thì sẽ được đi
+                    Hãy đẩy các thùng vàng và kim cương về kho, nếu tất cả thùng hàng di chuyển tới đích rồi thì sẽ được
+                    đi
                     chơi ở map lever mới nhé.
                     Nào hãy nhảy vào và triển thôi💖
                 </p>
@@ -196,11 +203,17 @@
     <audio class="audio" controls>
         <source src="./accsest/mp3/1.mp3" type="audio/mp3">
     </audio>
+    <div class="audio-volume">
+        <div class="audio-volume-icon">
+            <i class="audio-volume-off off fa-solid fa-volume-off"></i>
+            <i class="audio-volume-hight fa-solid fa-volume-high"></i>
+        </div>
+        <input id="progress" class="progress" type="range" value="100" step="1" min="0" max="100">
+    </div>
     <script src="./accsest/js/lever.js"></script>
     <script src="./accsest/js/validator.js"></script>
     <script src="./accsest/js/main.js"></script>
     <script>
-        const audio = document.querySelector('.audio')
         var authorName;
         Validator({
             form: '#form-1',

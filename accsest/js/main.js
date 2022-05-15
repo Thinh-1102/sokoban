@@ -20,9 +20,16 @@ const resetBtn = $('.reset-btn');
 const slct = $('#slct')
 const confirmBtn = $('.confirm-btn')
 
+const audio = $('.audio')
+const mute = $('.audio-volume-off')
+const hasVolume = $('.audio-volume-hight')
+const progress = $('.progress')
+const volumeIcon = $('.audio-volume-icon')
+
 var curenGame = leverMap[currenGameIndex].split('\n');
 $('.author-lever').innerHTML = `lever ${currenGameIndex + 1}`
 const app = {
+    isMute: false,
     // hàm render ra màn hình
     render: function () {
         // get hang vs cot
@@ -138,6 +145,29 @@ const app = {
         confirmBtn.onclick = function () {
             app.renderSelectedLevel()
         }
+
+        // xử lý khi click vào volume icon
+        volumeIcon.onclick = function () {
+            if (!app.isMute) {
+                mute.classList.remove('off')
+                hasVolume.classList.add('off')
+                app.isMute = true;
+                audio.volume = 0;
+                progress.value = 0;
+            } else {
+                mute.classList.add('off')
+                hasVolume.classList.remove('off')
+                app.isMute = false;
+                audio.volume = 1;
+                progress.value = 100;
+            }
+        },
+
+            // xử lý khi kéo vào thành điều chỉnh volume
+            progress.onchange = function (e) {
+                const seekVolume = e.target.value / 100
+                audio.volume = seekVolume;
+            }
     },
     //hàm xử lý resetGame
     resetClicked: function () {
@@ -150,6 +180,7 @@ const app = {
         $('.author-lever').innerHTML = `lever ${currenGameIndex + 1}`
         curenGame = leverMap[currenGameIndex].split('\n');
         app.render()
+        
     },
     // hàm xử lý sau khi nhận hướng đi
     goTo: function (nav) {

@@ -14,7 +14,7 @@ body {
     background-image: url('https://maytinhvui.com/wp-content/uploads/2021/02/Hinh-nen-anime-34-min-696x392.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 table {
-    margin: auto;
+    margin: -15px auto 0;
 }
 
 table td {
@@ -43,9 +43,10 @@ img {
 }
 
 .author {
-    margin-top: 15px;
+    padding: 35px 0 10px;
     text-align: center;
     color: #fff;
+    background-color: rgba(71, 7, 7, 0.4);
 }
 
 .author-name {
@@ -190,4 +191,64 @@ select {
     cursor: pointer;
     margin-right: 8px;
 }
+
+/* audio css */
+
+.audio {
+    visibility: hidden;
+}
+
+.audio-volume-off.off,
+.audio-volume-hight.off {
+    display: none;
+}
+
+.audio-volume{
+    display: flex;
+    position: fixed;
+    top: 12px;
+    left: 900px;
+}
+
+.audio-volume-icon {
+    padding: 8px;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 6px;
+    cursor: pointer;
+}
     
+
+/* input range */
+
+input[type=range]{
+    -webkit-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
